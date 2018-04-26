@@ -2,11 +2,76 @@
 {% load staticfiles %}
 
 {% block content %}
-                   
-                    <h1>hello sick</h1>
-                    <h2>привет</h2>
-                    <h3>Я хочу спать</h3>
-                    <p>
-                        Давно выяснено, что при оценке дизайна и композиции читаемый текст мешает сосредоточиться. Lorem Ipsum используют потому, что тот обеспечивает более или менее стандартное заполнение шаблона, а также реальное распределение букв и пробелов в абзацах, которое не получается при простой дубликации "Здесь ваш текст.. Здесь ваш текст.. Здесь ваш текст.." Многие программы электронной вёрстки и редакторы HTML используют Lorem Ipsum в качестве текста по умолчанию, так что поиск по ключевым словам "lorem ipsum" сразу показывает, как много веб-страниц всё ещё дожидаются своего настоящего рождения. За прошедшие годы текст Lorem Ipsum получил много версий. Некоторые версии появились по ошибке, некоторые - намеренно (например, юмористические варианты).
-                    </p>
+                    <div id="main">
+                        <h1>Решение любой психологической проблемы за одну консультацию!</h1>
+    <!--
+                        <div class="consultationsTypes grid">
+                            <div class="consultationsTypesItem ">
+                                <figure class="effect-lily">
+                                    <img src="{% static 'img/consultationsTypesItem_1.jpg' %}" alt="Тема конмультации 1"/>
+                                    <figcaption>
+                                        <h2>Страхи</h2>
+                                        <p>Lily likes to play with crayons and pencils</p>
+                                        <a href="#">View more</a>
+                                    </figcaption>			
+                                </figure>
+                            </div>
+                            <div class="consultationsTypesItem ">
+                                <figure class="effect-lily">
+                                    <img src="{% static 'img/consultationsTypesItem_2.jpg' %}" alt="Тема конмультации 2"/>
+                                    <figcaption>
+                                        <h2>Одиночество</h2>
+                                        <p>Lily likes to play with crayons and pencils</p>
+                                        <a href="#">View more</a>
+                                    </figcaption>			
+                                </figure>
+                            </div>
+                            <div class="consultationsTypesItem ">
+                                <figure class="effect-lily">
+                                    <img src="{% static 'img/consultationsTypesItem_3.jpg' %}" alt="Тема конмультации 3"/>
+                                    <figcaption>
+                                        <h2>Стрессы</h2>
+                                        <p>Lily likes to play with crayons and pencils</p>
+                                        <a href="#">View more</a>
+                                    </figcaption>			
+                                </figure>
+                            </div>
+                            <div class="consultationsTypesItem ">
+                                <figure class="effect-lily">
+                                    <img src="{% static 'img/consultationsTypesItem_4.jpg' %}" alt="Тема конмультации 4"/>
+                                    <figcaption>
+                                        <h2>Проблемы в отношениях</h2>
+                                        <p>Lily likes to play with crayons and pencils</p>
+                                        <a href="#">View more</a>
+                                    </figcaption>			
+                                </figure>
+                            </div>
+                        </div>
+    -->
+                        <div class="aboutMe">
+                            <div class="aboutMe__desc">
+                                <h2>Психолог Онлайн</h2>
+                                <h3>Марина Черноусова</h3>
+                                <p>Человек может мучиться годами, не зная, что можно КАРДИНАЛЬНО ИЗМЕНИТЬ СИТУАЦИЮ за 1,5 -2 часа, используя возможности своего подсознания и правильно выбранного психолога.</p>
+                                <div class="social">
+                                    <a href="https://vk.com/transformazia9" target="_blank">
+                                        <img src="{% static 'img/vk.png' %}" alt="Марина Черноусова во ВКонтакте">
+                                    </a>
+<!--
+                                    <a href="" target="_blank">
+                                        <img src="{% static 'img/youtube.png' %}" alt="Марина Черноусова в Instagram">
+                                    </a>
+-->
+                                    <a href="" target="_blank">
+                                        <img src="{% static 'img/instagram.png' %}" alt="YouTube канал Марины Черноусовой">
+                                    </a>
+                                </div>
+                                <div class="btnBlock">
+                                    <a href="#modal" class="btn popup">Запись</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    
 {% endblock %}

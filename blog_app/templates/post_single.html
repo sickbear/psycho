@@ -1,0 +1,9 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+
+{% block content %}
+    {{ post.title }}<br>
+    {{ post.create|date:"d-m-Y" }} <br>
+    <img src="{{ MEDIA_URL }}{{ post.image.url }}" style="width: 300px;" alt=""> <br>
+    {{ post.text }}
+{% endblock %}

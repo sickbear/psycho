@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+
+{% block content %}
+
+                    <div id="reviews">
+                        <div class="reviews">
+                            <img src="{% static 'img/kuznetsova.jpg' %}" alt="" class="reviews__img">
+                            <audio controls class="reviews__audio">
+                                <source src="{% static 'audio/kuznetsova.ogg' %}">
+                                <source src="{% static 'audio/kuznetsova.mp3' %}">
+                                Ваш браузер не пожжерживает тег audio!
+                            </audio>
+                        </div>
+                        <div class="reviews">
+                            <img src="{% static 'img/kasatina.jpg' %}" alt="" class="reviews__img">
+                            <audio controls class="reviews__audio">
+                                <source src="{% static 'audio/kasatina.ogg' %}">
+                                <source src="{% static 'audio/kasatina.mp3' %}">
+                                
+                                Ваш браузер не пожжерживает тег audio!
+                            </audio>
+                        </div>
+                    </div>        
+
+{% endblock %}

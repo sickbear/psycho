@@ -8,42 +8,77 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 <!--        <link rel="icon" href="" type="image/x-icon">-->
+        <link href="https://fonts.googleapis.com/css?family=Marck+Script" rel="stylesheet"> 
         <link href="https://fonts.googleapis.com/css?family=Montserrat:300,300i,400,500,700" rel="stylesheet"> 
         <link rel="stylesheet" href="{% static 'css/reset.css' %}">
-        <link rel="stylesheet" href="{% static 'css/main.css' %}">
+        <link rel="stylesheet" href="{% static 'css/effects.css' %}">
+        <link rel="stylesheet/less" href="{% static 'less/main.less' %}">
+        <script src="//cdnjs.cloudflare.com/ajax/libs/less.js/3.0.0/less.min.js" ></script>
 
         <title>
             Психолог Онлайн
         </title>
     </head>
     <body>
-        <div class="wrapper">
-            <header>
-                <div class="header_logo">
-
+        <div class="wrapper {% if page == 'main' %} mainBg {% endif %}">
+            <header class="{% if page != 'main' %} pageBg {% endif %}">
+                <div id="topLine">
+                    <div class="brandName">Скорая помощь душе</div>
                 </div>
-                <nav class="">
-
+                <nav id="menu">
+                    <ul id="menuLinks">
+                        <li>
+                            <a href="{% url 'main' %}" class="{% if page == 'main' %} active {% endif %}">Главная</a>
+                        </li>
+                        <li>
+                            <a href="{% url 'services' %}" class="{% if page == 'services' %} active {% endif %}">Услуги</a>
+                        </li>
+                        <li>
+                            <a href="{% url 'post_list' %}" class="{% if page == 'blog' %} active {% endif %}">Блог</a>
+                        </li>
+                        <li>
+                            <a href="{% url 'reviews' %}" class="{% if page == 'reviews' %} active {% endif %}">Отзывы</a>
+                        </li>
+                        <li>
+                            <a href="{% url 'contacts' %}" class="{% if page == 'contacts' %} active {% endif %}">Контакты</a>
+                        </li>
+                    </ul>
                 </nav>
             </header>
-            <div class="">
-                <main class="">
-                    {% block content %}
-                    {% endblock %}
-                </main>
-                <aside>
-
-                </aside>
-            </div>
+            <main>
+                {% block content %}
+                {% endblock %}
+            </main>
             <footer>
-
+                <p>marina-chernousova.ru</p>
+                <a href="">Политика конфиденциальности</a>
             </footer>
         </div>
+        
+        <div class="hidden">
+            <form id="modal" method="post">
+                <p class="modalTitle">Запись на консультацию</p>
+                <input type="text" name="name" placeholder="Ваше имя" required>
+                <input type="text" name="email" placeholder="Ваш email">
+                <p class="center">или</p>
+                <input type="text" name="skype" placeholder="Ваш skype">
+                <textarea name="" id="" cols="30" rows="5" 
+                          placeholder="Кратко опишите Вашу проблему"
+                          maxlength="1000"
+                          ></textarea>
+                <div class="btnBlock">
+                    <input type="submit" class="btn" value="Отправить">
+                </div>
+            </form>
+        </div>
+        
+        <link rel="stylesheet" href="{% static 'css/magnific-popup.css' %}">
         <script
 			  src="http://code.jquery.com/jquery-3.3.1.min.js"
 			  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
 			  crossorigin="anonymous">
         </script>
+        <script src="{% static 'js/jquery.magnific-popup.min.js' %}"></script>
         <script src="{% static 'js/main.js' %}"></script>
 
     </body>
