@@ -1,5 +1,6 @@
 @desktop: 1200px;
 @tablet: 768px;
+@mobile: 380px;
 @block-padding: 0 20px;
 
 @title-color: #5c6b61;
@@ -23,7 +24,7 @@ h1 {
     color: #fff;
     text-align: center;
     text-transform: uppercase;
-    margin: 30px 0;
+    margin: 30px 15px;
 }
 h2 {
     font-size: 27px;
@@ -39,7 +40,8 @@ h3 {
     text-align: center;
     margin: 10px 0;
 }
-p, li, a {
+p, li, a, 
+.postSingle__text {
     font-size: 16px;
     line-height: 22px;
     color: @text-color;
@@ -84,12 +86,15 @@ textarea {
     padding: 5px;
     border-radius: 3px;
 }
+.activeBlock {
+    color: @links-hover;
+}
 .btnBlock {
     text-align: center;
 }
 .btn {
     background: transparent;
-    color: #fff;
+    color: @links-hover;
     padding: 10px;
     margin: 15px auto;
     display: inline-block;
@@ -125,18 +130,19 @@ textarea {
     margin: 0 auto;
 }
 .mainBg {
-    background-image: url(../img/3.jpg);
+    background-image: url(../img/bg.jpg);
     background-repeat: no-repeat;
     background-size: cover;
 }
 .pageBg {
-    background-image: url(../img/111.jpg);
+    background-image: url(../img/header.jpg);
     background-repeat: no-repeat;
     background-size: cover;
 }
 header {
     background: rgba(0, 0, 0, 0.1);
     margin-bottom: 20px;
+    position: relative;
 }
 #topLine { 
     text-align: center;
@@ -144,10 +150,12 @@ header {
 .brandName {
     font-family: @brand-font;
     color: #fff;
-    padding: 20px;
+    margin: 20px;
     font-size: 30px;
+    display: inline-block;
 }
 #menu {
+    display: block;
     #menuLinks {
         text-align: center;
         margin: 0 0 20px;
@@ -168,6 +176,56 @@ header {
         };
     };
     
+}
+#mobile {
+    display: none;
+    width: 100%;
+    text-align: center;
+    padding-bottom: 10px;
+}
+#menuMobile {
+    position: absolute;
+    width: 100%;
+    top: 100%;
+    left: 0;
+    z-index: 100;
+    display: none;
+    & li {
+        padding: 10px 10px 0 10px;
+        background: rgba(0,0,0,0.95);
+        list-style-type: none;
+        &:last-child {
+            padding-bottom: 10px;
+        }
+        & a {
+            display: block;
+            padding: 5px;
+            text-align: center;
+            color: #fff;
+            text-transform: uppercase;
+        }
+    }
+}
+#burger {
+    display: none;
+    &:checked {
+        + .label {
+            background: url(../img/close_menu.png);
+        }
+        ~ #menuMobile {
+            display: block;
+        }
+    }
+}
+.label {
+    color: #fff;
+    background: url(../img/mobile_menu.png);
+    background-repeat: no-repeat;
+    width: 30px;
+    height: 30px;
+    display: block;
+    margin: 0 auto;
+    cursor: pointer;
 }
 main {
     flex: 1 0 auto;
@@ -196,7 +254,7 @@ main {
     max-width: 500px;
     display: flex;
     justify-content: center;
-    margin: 30px 15px;
+    margin: 30px auto;
     & h2 {
         color: #b7c0ba;
     }
@@ -218,24 +276,156 @@ main {
 #services {
     padding: @block-padding;
 }
+.why {
+    &__img {
+        width: 160px;
+        float: right;
+    }
+}
+.workScheme {
+    display: flex;
+    justify-content: center;
+    &__step {
+        width: 400px;
+        margin: 20px;
+        &:first-child {
+            margin-top: 0;
+            &::before {
+                content: url(../img/arrow-left.jpg);
+                position: relative;
+                top: 32px;
+                left: 405px;
+            }
+        }
+    }
+    &__title {
+        text-align: center;
+        background: @title-color;
+        color: #fff;
+        padding: 10px;
+    }
+    &__item {
+        display: flex;
+        justify-content: space-between;
+        padding: 30px 10px;
+        border-bottom: 1px solid @title-color;
+        border-left: 1px solid @title-color;
+        border-right: 1px solid @title-color; 
+        position: relative;
+        background: #fff;
+    }
+    &__desc {
+        width: 46%;
+        display: flex;
+        align-items: center;
+        & p {
+            text-align: center;
+        }
+    }
+    &__img {
+        width: 54%;
+        & img {
+            width: 100%;
+        }
+    }
+}
+.withArrow {
+    &::after,
+    &::before {
+        top: 100%;
+        left: 50%;
+        border: solid transparent;
+        content: " ";
+        height: 0;
+        width: 0;
+        position: absolute;
+        pointer-events: none;
+    }
+    &::after {
+        border-color: rgba(255, 255, 255, 0);
+        border-top-color: #fff;
+        border-width: 30px;
+        margin-left: -30px;
+    }
+    &::before {
+        border-color: rgba(92, 107, 97, 0);
+        border-top-color: #5c6b61;
+        border-width: 31px;
+        margin-left: -31px;
+    }
+}
+.priceList {
+    display: flex;
+    justify-content: center;
+    border: 1px dotted @text-color;
+    max-width: 600px;
+    margin: 0 auto 30px;
+    & div {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 30%;
+    }
+    &__time {
+        border-left: 1px dotted @text-color;
+        border-right: 1px dotted @text-color;
+    }
+    &__cost p {
+        color: green;
+    }
+}
+
 #blog {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
+    justify-content: center;
 }
 .post {
     display: flex;
     max-width: 290px;
     max-height: 200px;
+    border: 1px solid #cecece;
+    border-radius: 3px;
+    margin: 5px;
+    &:hover {
+        border-color: @links-hover;
+    }
+    & a {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
     &__img {
         max-width: 100%;
         max-height: 100%;
+        padding: 10px;
+        overflow: auto;
     }
     &__title {
         max-width: 270px;
         text-transform: uppercase;
         font-size: 14px;
         text-align: center;
+        padding: 5px;
+    }
+}
+#post {
+    padding: @block-padding;
+}
+.postSingle {
+    &__img {
+        float: left;
+        max-width: 500px;
+        margin: 10px 20px 10px 0;
+        border-radius: 10px;
+    }
+    &__date {
+        text-align: center;
+        padding-bottom: 10px;
+    }
+    &__text {
+        padding: 15px;
     }
 }
 #reviews {
@@ -251,7 +441,7 @@ main {
     flex-direction: column;
     max-width: 300px;
     height: 470px;
-    margin: 10px;
+    margin: 15px 10px 30px;
     &__img {
         width: 100%;
         height: 100%;
@@ -266,6 +456,12 @@ main {
         align-items: center;
         padding: 10px;
     }
+    & a {
+        text-decoration: underline;
+    }
+    & img {
+        padding-right: 10px;
+    }
 }
 footer {
     flex: 0 0 auto;
@@ -275,6 +471,7 @@ footer {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    margin: 20px 0 0;
     & p {
         color: #fff;
     }
@@ -291,14 +488,96 @@ footer {
     border-radius: 3px;
     background: #fff;
     & .btn {
-        color: @links-hover;
         font-family: @main-font;
-        &:hover {
-            color: #fff;
-        }
     }
 }
 .modalTitle {
     text-align: center;
     padding: 15px;
+}
+
+/* Media */
+
+@media (max-width: 900px) {
+    .workScheme {
+        flex-direction: column;
+        align-items: center;
+        &__step {
+            &:first-child {
+                margin-bottom: 0;
+                &::before {
+                    content: "";
+                }
+            }  
+            &:last-child {
+                margin-top: 0;
+            }
+        } 
+    }
+}
+@media (max-width: @tablet) {
+    #menu {
+        display: none;
+    }
+    #mobile {
+        display: block;
+    }
+    .aboutMe {
+        max-width: 100%;
+    }
+    .postSingle__img {
+        max-width: 100%;
+        float: none;
+        margin: 0 auto;
+        display: block;
+    }
+    .postSingle__text {
+        text-align: justify;
+        display: inline-block;
+        padding: 15px 0;
+    }
+}
+@media (max-width: 600px) {
+    .workScheme__step {
+        width: 100%;
+    }
+    .priceList div p {
+        text-align: center;
+    }
+    .priceList__type {
+        width: 60%!important;
+    }
+    .priceList__time {
+        width: 20%!important;
+    }
+    .priceList__cost {
+        width: 20%!important;
+    }
+}
+@media (max-width: @mobile) {
+    h1 {
+        font-size: 25px;
+        margin: 10px 15px;
+    }
+    h2 {
+        font-size: 22px;
+        line-height: 22px;
+    }
+    h3 {
+        font-size: 20px;
+    }
+    p, li, a, 
+    .postSingle__text {
+        font-size: 14px;
+        line-height: 20px;
+    }
+    .aboutMe {
+        margin: 15px;
+    }
+    .reviews {
+        max-width: 100%;
+    }
+    .workScheme__desc p {
+        font-size: 13px;
+    }
 }

@@ -7,11 +7,10 @@
         <meta name="description" content="">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-<!--        <link rel="icon" href="" type="image/x-icon">-->
+        <link rel="icon" href="{% static 'img/favicon.png' %}" type="image/x-icon">
         <link href="https://fonts.googleapis.com/css?family=Marck+Script" rel="stylesheet"> 
         <link href="https://fonts.googleapis.com/css?family=Montserrat:300,300i,400,500,700" rel="stylesheet"> 
         <link rel="stylesheet" href="{% static 'css/reset.css' %}">
-        <link rel="stylesheet" href="{% static 'css/effects.css' %}">
         <link rel="stylesheet/less" href="{% static 'less/main.less' %}">
         <script src="//cdnjs.cloudflare.com/ajax/libs/less.js/3.0.0/less.min.js" ></script>
 
@@ -23,7 +22,9 @@
         <div class="wrapper {% if page == 'main' %} mainBg {% endif %}">
             <header class="{% if page != 'main' %} pageBg {% endif %}">
                 <div id="topLine">
-                    <div class="brandName">Скорая помощь душе</div>
+                    <a href="/">
+                        <div class="brandName">Скорая Помощь Душе</div>
+                    </a>
                 </div>
                 <nav id="menu">
                     <ul id="menuLinks">
@@ -44,6 +45,27 @@
                         </li>
                     </ul>
                 </nav>
+                <div id="mobile">
+                    <input type="checkbox" id="burger">
+                    <label for="burger" class="label"></label>
+                    <nav id="menuMobile">
+                        <li>
+                            <a href="{% url 'main' %}" class="{% if page == 'main' %} active {% endif %}">Главная</a>
+                        </li>
+                        <li>
+                            <a href="{% url 'services' %}" class="{% if page == 'services' %} active {% endif %}">Услуги</a>
+                        </li>
+                        <li>
+                            <a href="{% url 'post_list' %}" class="{% if page == 'blog' %} active {% endif %}">Блог</a>
+                        </li>
+                        <li>
+                            <a href="{% url 'reviews' %}" class="{% if page == 'reviews' %} active {% endif %}">Отзывы</a>
+                        </li>
+                        <li>
+                            <a href="{% url 'contacts' %}" class="{% if page == 'contacts' %} active {% endif %}">Контакты</a>
+                        </li>
+                    </nav>
+                </div>
             </header>
             <main>
                 {% block content %}

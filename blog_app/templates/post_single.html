@@ -2,8 +2,15 @@
 {% load staticfiles %}
 
 {% block content %}
-    {{ post.title }}<br>
-    {{ post.create|date:"d-m-Y" }} <br>
-    <img src="{{ MEDIA_URL }}{{ post.image.url }}" style="width: 300px;" alt=""> <br>
-    {{ post.text }}
+    <div id="post">
+        <div class="postSingle">
+            <h2>{{ post.title }}</h2>
+            <p class="postSingle__date">{{ post.create|date:"d-m-Y" }}</p>
+            <img src="{{ MEDIA_URL }}{{ post.image.url }}" alt="{{ post.title }}" class="postSingle__img">
+            <span class="postSingle__text">{{ post.text }}</span>
+        </div>
+        <div class="btnBlock">
+            <button class="btn" onclick="history.back();">Назад</button>
+        </div>
+    </div>
 {% endblock %}
