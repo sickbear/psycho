@@ -1,0 +1,3 @@
+User-agent: *
+Host: http://marina-chernousova.ru/
+Disallow: /admin
