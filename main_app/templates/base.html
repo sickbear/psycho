@@ -15,35 +15,6 @@
         <link rel="stylesheet" href="{% static 'css/reset.css' %}">
         <link rel="stylesheet/less" href="{% static 'less/main.less' %}">
         <script src="//cdnjs.cloudflare.com/ajax/libs/less.js/3.0.0/less.min.js" ></script>
-        <!-- Yandex.Metrika counter -->
-        <script type="text/javascript" >
-            (function (d, w, c) {
-                (w[c] = w[c] || []).push(function() {
-                    try {
-                        w.yaCounter48843956 = new Ya.Metrika({
-                            id:48843956,
-                            clickmap:true,
-                            trackLinks:true,
-                            accurateTrackBounce:true,
-                            webvisor:true
-                        });
-                    } catch(e) { }
-                });
-
-                var n = d.getElementsByTagName("script")[0],
-                    s = d.createElement("script"),
-                    f = function () { n.parentNode.insertBefore(s, n); };
-                s.type = "text/javascript";
-                s.async = true;
-                s.src = "https://mc.yandex.ru/metrika/watch.js";
-
-                if (w.opera == "[object Opera]") {
-                    d.addEventListener("DOMContentLoaded", f, false);
-                } else { f(); }
-            })(document, window, "yandex_metrika_callbacks");
-        </script>
-        <noscript><div><img src="https://mc.yandex.ru/watch/48843956" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
-        <!-- /Yandex.Metrika counter -->
 
         <title>
             Психолог Онлайн
@@ -109,13 +80,14 @@
         </div>
         
         <div class="hidden">
-            <form id="modal" method="post">
+            <form id="modal" method="post" action="{% url 'send_form' %}">
+                {% csrf_token %}
                 <p class="modalTitle">Запись на консультацию</p>
                 <input type="text" name="name" placeholder="Ваше имя" required>
                 <input type="text" name="email" placeholder="Ваш email">
                 <p class="center">или</p>
                 <input type="text" name="skype" placeholder="Ваш skype">
-                <textarea name="" id="" cols="30" rows="5" 
+                <textarea name="text" cols="30" rows="5" 
                           placeholder="Кратко опишите Вашу проблему"
                           maxlength="1000"
                           ></textarea>
@@ -126,13 +98,14 @@
         </div>
         
         <div class="hidden">
-            <form id="modalQuestion" method="post">
+            <form id="modalQuestion" method="post" action="{% url 'send_form' %}">
+                {% csrf_token %}
                 <p class="modalTitle">Задать вопрос</p>
                 <input type="text" name="name" placeholder="Ваше имя" required>
                 <input type="text" name="email" placeholder="Ваш email">
                 <p class="center">или</p>
                 <input type="text" name="skype" placeholder="Ваш skype">
-                <textarea name="" id="" cols="30" rows="5" 
+                <textarea name="text" cols="30" rows="5" 
                           placeholder="Ваш вопрос"
                           maxlength="1000"
                           ></textarea>
@@ -168,5 +141,35 @@
         <script src="{% static 'js/jquery.magnific-popup.min.js' %}"></script>
         <script src="{% static 'js/main.js' %}"></script>
 
+        <!-- Yandex.Metrika counter -->
+        <script type="text/javascript" >
+            (function (d, w, c) {
+                (w[c] = w[c] || []).push(function() {
+                    try {
+                        w.yaCounter48843956 = new Ya.Metrika({
+                            id:48843956,
+                            clickmap:true,
+                            trackLinks:true,
+                            accurateTrackBounce:true,
+                            webvisor:true
+                        });
+                    } catch(e) { }
+                });
+
+                var n = d.getElementsByTagName("script")[0],
+                    s = d.createElement("script"),
+                    f = function () { n.parentNode.insertBefore(s, n); };
+                s.type = "text/javascript";
+                s.async = true;
+                s.src = "https://mc.yandex.ru/metrika/watch.js";
+
+                if (w.opera == "[object Opera]") {
+                    d.addEventListener("DOMContentLoaded", f, false);
+                } else { f(); }
+            })(document, window, "yandex_metrika_callbacks");
+        </script>
+        <noscript><div><img src="https://mc.yandex.ru/watch/48843956" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+        <!-- /Yandex.Metrika counter -->
+        
     </body>
 </html>

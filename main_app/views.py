@@ -1,4 +1,7 @@
 from django.shortcuts import render
+from django.core.mail import send_mail
+from django.http import HttpResponseRedirect
+from django.conf import settings
 
 
 def main(request):
@@ -9,10 +12,6 @@ def services(request):
     page = 'services'
     return render(request, 'services.html', {'page': page})
 
-# def blog(request):
-#     page = 'blog'
-#     return render(request, 'blog.html', {'page': page})
-
 def reviews(request):
     page = 'reviews'
     return render(request, 'reviews.html', {'page': page})
@@ -20,3 +19,33 @@ def reviews(request):
 def contacts(request):
     page = 'contacts'
     return render(request, 'contacts.html', {'page': page})
+
+def send_form(request):
+    if request.method == 'POST':
+        name = request.POST.get('name')
+        email = request.POST.get('email')
+        skype = request.POST.get('skype')
+        text = request.POST.get('text')
+
+        subject = 'Вопрос с сайта marina-chernousova.ru'
+        from_email = settings.EMAIL_HOST_USER
+        to_email = [from_email, settings.MAIN_EMAIL]
+        contact_message = '''
+                Вопрос от......... {}
+                Email............. {}
+                skype............. {}
+                ------------------
+                {}
+                '''.format(name, email, skype, text)
+
+        send_mail(subject,
+                  contact_message,
+                  from_email,
+                  to_email,
+                  fail_silently=False)
+        return HttpResponseRedirect('/sent/')
+    else:
+        return render(request, 'index.html')
+
+def sent(request):
+    return render(request, 'sent.html')
