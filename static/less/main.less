@@ -127,13 +127,14 @@ textarea {
     flex-direction: column;
     height: 100%;
     max-width: 1920px;
+    min-height: 850px;
     margin: 0 auto;
 }
 .mainBg {
     background-image: url(../img/bg.jpg);
     background-repeat: no-repeat;
     background-size: cover;
-    background-position: 100%;
+    background-position: 18%;
 }
 .pageBg {
     background-image: url(../img/header.jpg);
@@ -141,7 +142,7 @@ textarea {
     background-size: cover;
 }
 header {
-    background: rgba(0, 0, 0, 0.1);
+    background: rgba(0, 0, 0, 0.5);
     margin-bottom: 20px;
     position: relative;
 }
@@ -255,15 +256,15 @@ main {
     max-width: 500px;
     display: flex;
     justify-content: center;
-    margin: 30px auto;
+    margin: 30px;
     & h2 {
-        color: #b7c0ba;
+        color: #fff;
     }
     & h3 {
-        color: #b7c0ba;
+        color: #fff;
     }
     & p {
-        color: #b7c0ba;
+        color: #fff;
         text-align: center!important;
     }
 }
@@ -593,8 +594,12 @@ footer {
         font-size: 14px;
         line-height: 20px;
     }
+    header {
+        background: rgba(0, 0, 0, .7);
+    }
     .aboutMe {
         margin: 15px;
+        background: rgba(0, 0, 0, .7);
     }
     .reviews {
         max-width: 100%;
