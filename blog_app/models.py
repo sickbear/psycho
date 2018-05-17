@@ -9,7 +9,7 @@ class Post(models.Model):
         verbose_name_plural = 'Статьи'
         ordering = ['create']
 
-    title = models.CharField('Заголовок', max_length=500)
+    title = models.CharField('Заголовок', max_length=550)
     text = RichTextUploadingField(blank=True, null=True)
     image = models.ImageField('Изображение', upload_to='post/')
     create = models.DateTimeField('Создано', auto_now=True)
