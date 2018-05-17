@@ -6,7 +6,7 @@
         <div class="postSingle">
             <h2>{{ post.title }}</h2>
             <p class="postSingle__date">{{ post.create|date:"d-m-Y" }}</p>
-            <div class="postSingle__text">{{ post.text | truncatechars:400 | safe }}</div>
+            <div class="postSingle__text">{{ post.text | safe }}</div>
         </div>
         <div class="btnBlock">
             <button class="btn" onclick="history.back();">Назад</button>
