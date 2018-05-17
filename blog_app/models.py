@@ -1,4 +1,5 @@
 from django.db import models
+from ckeditor_uploader.fields import RichTextUploadingField
 
 class Post(models.Model):
 
@@ -8,8 +9,8 @@ class Post(models.Model):
         verbose_name_plural = 'Статьи'
         ordering = ['create']
 
-    title = models.CharField('Заголовок', max_length=140)
-    text = models.TextField('Текст статьи')
+    title = models.CharField('Заголовок', max_length=500)
+    text = RichTextUploadingField(blank=True, null=True)
     image = models.ImageField('Изображение', upload_to='post/')
     create = models.DateTimeField('Создано', auto_now=True)
 

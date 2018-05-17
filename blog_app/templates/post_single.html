@@ -6,8 +6,7 @@
         <div class="postSingle">
             <h2>{{ post.title }}</h2>
             <p class="postSingle__date">{{ post.create|date:"d-m-Y" }}</p>
-            <img src="{{ MEDIA_URL }}{{ post.image.url }}" alt="{{ post.title }}" class="postSingle__img">
-            <span class="postSingle__text">{{ post.text }}</span>
+            <div class="postSingle__text">{{ post.text | truncatechars:400 | safe }}</div>
         </div>
         <div class="btnBlock">
             <button class="btn" onclick="history.back();">Назад</button>
