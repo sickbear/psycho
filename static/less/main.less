@@ -95,6 +95,7 @@ textarea {
 .btn {
     background: transparent;
     color: @links-hover;
+    font-weight: bold;
     padding: 10px;
     margin: 15px auto;
     display: inline-block;
@@ -367,6 +368,12 @@ main {
         justify-content: center;
         align-items: center;
         width: 30%;
+        flex-direction: column;
+    }
+    &__type {
+        & p {
+            padding: 5px;
+        }
     }
     &__time {
         border-left: 1px dotted @text-color;
@@ -436,8 +443,9 @@ main {
 #reviews {
     padding: @block-padding;
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     justify-content: center;
+    align-items: center;
     flex-wrap: wrap;
     width: 100%;
 }
@@ -451,6 +459,20 @@ main {
         width: 100%;
         height: 100%;
     }
+}
+.audioReviews {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+.videoReviews {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+        & iframe {
+            padding: 15px;
+        }
 }
 #contacts {
     padding: @block-padding;
@@ -539,6 +561,19 @@ footer {
     }
 }
 @media (max-width: @tablet) {
+    #main {
+        & h1 {
+            margin: 80px 30px 30px;
+            max-width: 420px;
+            background: rgba(0, 0, 0, .7);
+            font-weight: bold;
+            border-radius: 6px;
+            padding: 10px 0;
+        }
+    }
+    .mainBg {
+        background-position: 30% -116px
+    }
     #menu {
         display: none;
     }
@@ -547,6 +582,8 @@ footer {
     }
     .aboutMe {
         max-width: 100%;
+        background: rgba(0, 0, 0, .7);
+        border-radius: 6px;
     }
     .postSingle__img {
         max-width: 100%;
@@ -558,6 +595,12 @@ footer {
         text-align: justify;
         display: inline-block;
         padding: 15px 0;
+    }
+    .videoReviews {
+        width: 100%;
+        & iframe {
+            width: 100%;
+        }
     }
 }
 @media (max-width: 600px) {
@@ -577,11 +620,18 @@ footer {
         width: 20%!important;
     }
 }
-@media (max-width: @mobile) {
-    h1 {
-        font-size: 25px;
-        margin: 10px 15px;
+@media (max-width: 480px) {
+    #main {
+        & h1 {
+            font-size: 20px;
+            max-width: 280px;
+        }
     }
+    .mainBg {
+        background-position: 44% -127px;
+    }
+}
+@media (max-width: @mobile) {
     h2 {
         font-size: 22px;
         line-height: 22px;
@@ -594,12 +644,19 @@ footer {
         font-size: 14px;
         line-height: 20px;
     }
+    #main h1 {
+        margin: 0 15px 15px;
+        max-width: 212px;
+        font-size: 18px;
+    }
     header {
         background: rgba(0, 0, 0, .7);
     }
     .aboutMe {
         margin: 15px;
-        background: rgba(0, 0, 0, .7);
+    }
+    .mainBg {
+        background-position: 49% -136px;
     }
     .reviews {
         max-width: 100%;
