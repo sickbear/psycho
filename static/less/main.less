@@ -227,8 +227,9 @@ header {
     width: 30px;
     height: 30px;
     display: block;
-    margin: 0 auto;
+    margin: 0 30px 10px;
     cursor: pointer;
+    float: right;
 }
 main {
     flex: 1 0 auto;
@@ -427,10 +428,7 @@ main {
 }
 .postSingle {
     &__img {
-        float: left;
-        max-width: 500px;
-        margin: 10px 20px 10px 0;
-        border-radius: 10px;
+        
     }
     &__date {
         text-align: center;
@@ -438,6 +436,15 @@ main {
     }
     &__text {
         padding: 15px;
+    }
+    & a {
+        text-decoration: underline;
+        &:hover {
+            color: @links-hover;
+        }
+    }
+    & strong {
+        font-weight: bold;
     }
 }
 #reviews {
@@ -470,6 +477,7 @@ main {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
+    flex-direction: column;
         & iframe {
             padding: 15px;
         }
@@ -604,6 +612,9 @@ footer {
     }
 }
 @media (max-width: 600px) {
+    .mainBg {
+        background-position: 34% -116px;
+    }
     .workScheme__step {
         width: 100%;
     }
@@ -645,7 +656,7 @@ footer {
         line-height: 20px;
     }
     #main h1 {
-        margin: 0 15px 15px;
+        margin: 40px 15px 15px;
         max-width: 212px;
         font-size: 18px;
     }
@@ -653,10 +664,10 @@ footer {
         background: rgba(0, 0, 0, .7);
     }
     .aboutMe {
-        margin: 15px;
+        margin: 60px 15px 30px;
     }
     .mainBg {
-        background-position: 49% -136px;
+        background-position: 50% -136px;
     }
     .reviews {
         max-width: 100%;
