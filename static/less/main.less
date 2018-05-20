@@ -477,10 +477,22 @@ main {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    flex-direction: column;
+    flex-direction: row;
         & iframe {
             padding: 15px;
+            max-width: 400px;
         }
+}
+.photoReviews {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 30px 0;
+}
+.popup-gallery {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
 }
 #contacts {
     padding: @block-padding;

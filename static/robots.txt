@@ -1,3 +1,4 @@
 User-agent: *
 Host: http://marina-chernousova.ru/
+Sitemap: http://marina-chernousova.ru/sitemap.xml
 Disallow: /admin

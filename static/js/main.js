@@ -13,9 +13,14 @@ $(document).ready(function() {
             $( this ).find('.post__title').removeClass('activeBlock');
     });
     
+    $('.popup-gallery').magnificPopup({
+		delegate: 'a',
+		type: 'image',
+		gallery: {
+			enabled: true,
+			navigateByImgClick: true,
+			preload: [0,1]
+		}
+	});
+    
 });
-
-
-
-
-$(this).find('.post__title').addClass('activeBlock');
