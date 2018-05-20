@@ -3,13 +3,15 @@
 
 {% block content %}
 
-                    <div id="reviews">
-                       <h3>Аудио отзывы</h3>
+                    <div id="reviews" itemprop="review" itemscope itemtype="http://schema.org/Review">
+                        <meta itemprop="author" content="Марина Черноусова">
+                        <meta itemprop="itemReviewed" content="Отзывы после консультации психолога Марины Черноусовой">
+                        <h3>Аудио отзывы</h3>
                         <div class="audioReviews">
                             <div class="reviews">
                                 <img src="{% static 'img/kuznetsova.jpg' %}" alt="Отзыв о консультации" class="reviews__img">
                                 <audio controls class="reviews__audio">
-                                    <source src="{% static 'audio/kuznetsova.ogg' %}">
+                                    <source src="{% static 'audio/kuznetsova.ogg' %}" itemprop="audio">
                                     <source src="{% static 'audio/kuznetsova.mp3' %}">
                                     Ваш браузер не пожжерживает тег audio!
                                 </audio>
@@ -17,7 +19,7 @@
                             <div class="reviews">
                                 <img src="{% static 'img/kasatina.jpg' %}" alt="Отзыв о консультации" class="reviews__img">
                                 <audio controls class="reviews__audio">
-                                    <source src="{% static 'audio/kasatina.ogg' %}">
+                                    <source src="{% static 'audio/kasatina.ogg' %}" itemprop="audio">
                                     <source src="{% static 'audio/kasatina.mp3' %}">
                                     Ваш браузер не пожжерживает тег audio!
                                 </audio>

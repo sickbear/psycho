@@ -6,9 +6,12 @@
                         <h1>Решение любой психологической проблемы за одну консультацию!</h1>
 <!--                        <img src="{% static 'img/bg-mobile.jpg' %}" alt="">-->
                         <div class="aboutMe">
-                            <div class="aboutMe__desc">
-                                <h2>Психолог Онлайн</h2>
-                                <h3>Марина Черноусова</h3>
+                            <div class="aboutMe__desc" itemscope itemType = http://schema.org/Person>
+                                <h2 itemprop="jobTitle">Психолог Онлайн</h2>
+                                <h3 itemprop="name">Марина Черноусова</h3>
+                                <meta itemprop="image" content="{% static 'img/img.jpg' %}">
+                                <meta itemprop="makesOffer" content="Решение психологической проблемы по уникальной методике за одну консультацию.">
+                                <meta itemprop="email" content="chernousova.m.a@yandex.ru">
                                 <p>Человек может страдать годами, не зная, что можно КАРДИНАЛЬНО ИЗМЕНИТЬ СИТУАЦИЮ за 1,5 -2 часа, используя возможности своего подсознания и правильно выбранного психолога.</p>
                                 <div class="social">
                                     <a href="https://vk.com/transformazia9" target="_blank">

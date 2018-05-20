@@ -2,11 +2,16 @@
 {% load staticfiles %}
 
 {% block content %}
-    <div id="post">
+    <div id="post" itemscope itemtype="http://schema.org/Article">
+        <meta itemprop="author" content="Психолог Марина Черноусова">
+        <meta itemprop="datePublished" content="{{ post.create|date:'Y' }}">
+        <meta itemprop="publisher" content="marina-chernousova.ru">
+        <meta itemprop="headline" content="{{ post.title }}">
+        <img src="{% static 'img/img.jpg' %}" alt="Психолог Марина Черноусова" class="hidden" itemprop="image">
         <div class="postSingle">
-            <h2>{{ post.title }}</h2>
-            <p class="postSingle__date">{{ post.create|date:"d-m-Y" }}</p>
-            <div class="postSingle__text">{{ post.text | safe }}</div>
+            <h2 itemprop="name">{{ post.title }}</h2>
+            <p class="postSingle__date" itemprop="dateCreated">{{ post.create|date:"d-m-Y" }}</p>
+            <div class="postSingle__text" itemprop="articleBody">{{ post.text | safe }}</div>
         </div>
         <div class="btnBlock">
             <button class="btn" onclick="history.back();">Назад</button>
