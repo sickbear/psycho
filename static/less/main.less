@@ -1,12 +1,14 @@
 @accent-color: #614157;
 @hover-color: #715468;
 @footer-color: #414245;
-@text-color: #838383;
+@text-color: #555;
 @title-font: 'Montserrat', sans-serif;
 @to-xl: 1200px;
 @to-lg: 992px;
 @to-md: 768px;
 @to-sm: 576px;
+
+//@text-color: #838383;
 
 @import url("https://netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css");
 
@@ -20,7 +22,7 @@ h1, h2 {
 h3 {
     font-size: 18px;
     font-weight: 700;
-    color: #c7c7c7;
+    color: #999;
     line-height: 28px;
     margin-top: 20px;
     text-transform: inherit;
@@ -35,7 +37,7 @@ p, ul li, td {
     font-family: @title-font;
     font-size: 18px;
     line-height: 30px!important;
-    font-weight: 300;
+    font-weight: 400;
 }
 ul {
     margin: 0;
@@ -140,6 +142,8 @@ textarea {
     background-repeat: no-repeat;
     padding: 180px 0px;
     & h1 {
+        padding: 0 40px;
+        text-align: left;
         font-size: 58px;
         line-height: 62px;
         color: #fff;
@@ -158,7 +162,7 @@ textarea {
         background-color: rgba(0,0,0,0.1);
     }
     .btn {
-        margin: 40px auto 0;
+        margin: 40px 0 0 40px;
         background-color: @footer-color;
         color: #fff;
         border-radius: 0;
@@ -187,16 +191,18 @@ textarea {
             margin-top: 25px;
             font-size: 18px;
             line-height: 30px;
-            font-weight: 300;
         }
     }
 }
 
 /* problems */
 #problems {
-    padding: 80px 0px;
+    padding: 80px 0;
     & img {
-        padding: 60px 0;    
+        height: 350px;
+        margin: 0 auto;
+        display: block; 
+        border-radius: 5px;
     }
 }
 
@@ -472,6 +478,13 @@ footer {
 
 /* media */
 @media(max-width: @to-xl) {
+    #offer {
+        & h1 {
+            padding: 0 10px 0 40px;
+            font-size: 53px;
+            line-height: 57px;
+        }
+    }
     .navigation {
         & ul {
             & li {
@@ -492,14 +505,23 @@ footer {
 }
 
 @media(max-width: @to-lg) {
+     #offer {
+        & h1 {
+            padding: 0 10px 0 20px;
+            font-size: 48px;
+        }
+         & .btn {
+             margin: 40px 0 0 20px;
+         }
+    }
     #aboutMe {
         padding: 40px 0px 20px;
     }
     #problems {
         padding: 0 15px;
-        margin: 0 0 20px;
+        margin: 0 0 40px;
         & img {
-            padding: 20px 0;    
+            display: none;
         }
     }
     #steps {
@@ -565,7 +587,7 @@ footer {
             text-align: left;
         }
         & .btn {
-            margin: 40px 0 0;
+           
         }
     }
     #faq {
@@ -616,6 +638,11 @@ footer {
             max-width: 191px;
             position: relative;
             top: 76px;
+        }
+    }
+    #problems {
+        & ul {
+            padding: 0 20px;
         }
     }
     #advantages {
