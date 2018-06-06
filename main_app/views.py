@@ -23,20 +23,18 @@ def contacts(request):
 def send_form(request):
     if request.method == 'POST':
         name = request.POST.get('name')
-        email = request.POST.get('email')
-        skype = request.POST.get('skype')
+        contact = request.POST.get('contact')
         text = request.POST.get('text')
 
         subject = 'Вопрос с сайта marina-chernousova.ru'
         from_email = settings.EMAIL_HOST_USER
         to_email = [from_email, settings.MAIN_EMAIL]
         contact_message = '''
-                Вопрос от......... {}
-                Email............. {}
-                skype............. {}
+                Имя............... {}
+                Контакты.......... {}
                 ------------------
                 {}
-                '''.format(name, email, skype, text)
+                '''.format(name, contact, text)
 
         send_mail(subject,
                   contact_message,

@@ -3,60 +3,80 @@
 
 {% block content %}
 
-                    <div id="reviews" itemprop="review" itemscope itemtype="http://schema.org/Review">
+                    <section id="reviews" itemprop="review" itemscope itemtype="http://schema.org/Review">
                         <meta itemprop="author" content="Марина Черноусова">
                         <meta itemprop="itemReviewed" content="Отзывы после консультации психолога Марины Черноусовой">
-                        <h3>Аудио отзывы</h3>
-                        <div class="audioReviews">
-                            <div class="reviews">
-                                <img src="{% static 'img/kuznetsova.jpg' %}" alt="Отзыв о консультации" class="reviews__img">
-                                <audio controls class="reviews__audio">
-                                    <source src="{% static 'audio/kuznetsova.ogg' %}" itemprop="audio">
-                                    <source src="{% static 'audio/kuznetsova.mp3' %}">
-                                    Ваш браузер не пожжерживает тег audio!
-                                </audio>
+                        <div class="container">
+                            <h3>Аудио отзывы</h3>
+                            <div class="row justify-content-center">
+                                <div class="col-sm-6 col-md-4">
+                                    <img src="{% static 'img/reviews/kuznetsova.jpg' %}" alt="Отзыв о консультации" class="reviews__img">
+                                    <audio controls class="reviews__audio">
+                                        <source src="{% static 'audio/kuznetsova.ogg' %}" itemprop="audio">
+                                        <source src="{% static 'audio/kuznetsova.mp3' %}">
+                                        Ваш браузер не пожжерживает тег audio!
+                                    </audio>
+                                </div>
+                                <div class="col-sm-6 col-md-4">
+                                    <img src="{% static 'img/reviews/kasatina.jpg' %}" alt="Отзыв о консультации" class="reviews__img">
+                                    <audio controls class="reviews__audio">
+                                        <source src="{% static 'audio/kasatina.ogg' %}" itemprop="audio">
+                                        <source src="{% static 'audio/kasatina.mp3' %}">
+                                        Ваш браузер не пожжерживает тег audio!
+                                    </audio>
+                                </div>
                             </div>
-                            <div class="reviews">
-                                <img src="{% static 'img/kasatina.jpg' %}" alt="Отзыв о консультации" class="reviews__img">
-                                <audio controls class="reviews__audio">
-                                    <source src="{% static 'audio/kasatina.ogg' %}" itemprop="audio">
-                                    <source src="{% static 'audio/kasatina.mp3' %}">
-                                    Ваш браузер не пожжерживает тег audio!
-                                </audio>
+                            <h3>Видео отзывы</h3>
+                            <div class="row justify-content-center">
+                                <div class="col-md-6 col-lg-4">
+                                    <iframe src="//vk.com/video_ext.php?oid=-156580087&id=456239017&hash=919c87b0f4bbaa22&hd=1" width="640" height="360" frameborder="0" allowfullscreen></iframe>
+                                </div>
+                                <div class="col-md-6 col-lg-4">
+                                    <iframe src="//vk.com/video_ext.php?oid=-156580087&id=456239019&hash=c2ddc7d6dba04970&hd=1" width="640" height="360" frameborder="0" allowfullscreen></iframe>
+                                </div>
+                                <div class="col-md-6 col-lg-4">
+                                     <iframe src="//vk.com/video_ext.php?oid=37616100&id=456239456&hash=d0d3b59305a88a9c&hd=1" width="640" height="360" frameborder="0" allowfullscreen></iframe>
+                                </div>
+                            </div>
+                            <h3>Фото отзывы</h3>
+                            <div class="row justify-content-center popup-gallery">
+                                <div class="col text-center">
+                                    <a href="{% static 'img/reviews/review1.jpg' %}">
+                                        <img src="{% static 'img/reviews/review1.jpg' %}" width="150" height="150">
+                                    </a>
+                                </div>
+                                <div class="col text-center">
+                                    <a href="{% static 'img/reviews/review2.jpg' %}">
+                                        <img src="{% static 'img/reviews/review2.jpg' %}" width="150" height="150">
+                                    </a>
+                                </div>
+                                <div class="col text-center">
+                                    <a href="{% static 'img/reviews/review3.jpg' %}">
+                                        <img src="{% static 'img/reviews/review3.jpg' %}" width="150" height="150">
+                                    </a>
+                                </div>
+                                <div class="col text-center">
+                                    <a href="{% static 'img/reviews/review4.jpg' %}">
+                                        <img src="{% static 'img/reviews/review4.jpg' %}" width="150" height="150">
+                                    </a>
+                                </div>
+                                <div class="col text-center">
+                                    <a href="{% static 'img/reviews/review5.jpg' %}">
+                                        <img src="{% static 'img/reviews/review5.jpg' %}" width="150" height="150">
+                                    </a>
+                                </div>
+                                <div class="col text-center">
+                                    <a href="{% static 'img/reviews/review6.jpg' %}">
+                                        <img src="{% static 'img/reviews/review6.jpg' %}" width="150" height="150">
+                                    </a>
+                                </div>
+                                <div class="col text-center">
+                                    <a href="{% static 'img/reviews/review7.jpg' %}">
+                                        <img src="{% static 'img/reviews/review7.jpg' %}" width="150" height="150">
+                                    </a>
+                                </div>
                             </div>
                         </div>
-                        <h3>Видео отзывы</h3>
-                        <div class="videoReviews">
-                            <iframe src="//vk.com/video_ext.php?oid=-156580087&id=456239017&hash=919c87b0f4bbaa22&hd=1" width="640" height="360" frameborder="0" allowfullscreen></iframe>
-                            <iframe src="//vk.com/video_ext.php?oid=-156580087&id=456239019&hash=c2ddc7d6dba04970&hd=1" width="640" height="360" frameborder="0" allowfullscreen></iframe>
-                            <iframe src="//vk.com/video_ext.php?oid=37616100&id=456239456&hash=d0d3b59305a88a9c&hd=1" width="640" height="360" frameborder="0" allowfullscreen></iframe>
-                        </div>
-                        <h3>Фото отзывы</h3>
-                        <div class="photoReviews">
-                            <div class="popup-gallery">
-                                <a href="{% static 'img/reviews/review1.jpg' %}">
-                                    <img src="{% static 'img/reviews/review1.jpg' %}" width="150" height="150">
-                                </a>
-                                <a href="{% static 'img/reviews/review2.jpg' %}">
-                                    <img src="{% static 'img/reviews/review2.jpg' %}" width="150" height="150">
-                                </a>
-                                <a href="{% static 'img/reviews/review3.jpg' %}">
-                                    <img src="{% static 'img/reviews/review3.jpg' %}" width="150" height="150">
-                                </a>
-                                <a href="{% static 'img/reviews/review4.jpg' %}">
-                                    <img src="{% static 'img/reviews/review4.jpg' %}" width="150" height="150">
-                                </a>
-                                <a href="{% static 'img/reviews/review5.jpg' %}">
-                                    <img src="{% static 'img/reviews/review5.jpg' %}" width="150" height="150">
-                                </a>
-                                <a href="{% static 'img/reviews/review6.jpg' %}">
-                                    <img src="{% static 'img/reviews/review6.jpg' %}" width="150" height="150">
-                                </a>
-                                <a href="{% static 'img/reviews/review7.jpg' %}">
-                                    <img src="{% static 'img/reviews/review7.jpg' %}" width="150" height="150">
-                                </a>
-                            </div>
-                        </div>
-                    </div>        
+                    </section>        
 
 {% endblock %}

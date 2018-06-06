@@ -2,19 +2,29 @@
 {% load staticfiles %}
 
 {% block content %}
-    <div id="post" itemscope itemtype="http://schema.org/Article">
+    <section id="post" itemscope itemtype="http://schema.org/Article">
         <meta itemprop="author" content="Психолог Марина Черноусова">
         <meta itemprop="datePublished" content="{{ post.create|date:'Y' }}">
         <meta itemprop="publisher" content="marina-chernousova.ru">
         <meta itemprop="headline" content="{{ post.title }}">
-        <img src="{% static 'img/img.jpg' %}" alt="Психолог Марина Черноусова" class="hidden" itemprop="image">
-        <div class="postSingle">
+        <meta itemprop="image" content="{% static 'img/marina-chernousova.jpg' %}">    
+        
+        <meta property="og:type" content="article">
+        <meta property="og:description" content="{% if post.subtitle %} {{ post.subtitle }} {% else %} Новый пост на сайте marina-chernousova.ru {% endif %}">
+        <meta property="og:title" content="{{ post.title }}">
+        <meta property="og:url" content="http://marina-chernousova.ru{{ request.path }}">
+        <meta property="og:image" content="{{ MEDIA_URL }}{{ post.image.url }}">
+        <meta property="og:content_tier" content="free">
+        
+        <div class="container">
             <h2 itemprop="name">{{ post.title }}</h2>
-            <p class="postSingle__date" itemprop="dateCreated">{{ post.create|date:"d-m-Y" }}</p>
-            <div class="postSingle__text" itemprop="articleBody">{{ post.text | safe }}</div>
+            <p class="date" itemprop="dateCreated">{{ post.create|date:"d-m-Y" }}</p>
+            <div class="row">
+                <div class="text" itemprop="articleBody">{{ post.text | safe }}</div>
+            </div>
+            <div class="row justify-content-center">
+                <a class="btn" href="{% url 'post_list' %}">Назад</a>
+            </div>
         </div>
-        <div class="btnBlock">
-            <button class="btn" onclick="history.back();">Назад</button>
-        </div>
-    </div>
+    </section>
 {% endblock %}

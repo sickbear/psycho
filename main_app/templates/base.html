@@ -3,120 +3,169 @@
 <html lang="ru">
     <head>
         <meta charset="UTF-8">
-        <meta name="keywords" content="Психолог Онлайн">
-        <meta name="description" content="Решение психологической проблемы по уникальной методике за 1 консультацию!">
+        <meta name="keywords" content="Психолог онлайн, Психолог по скайпу">
+        <meta name="description" content="Решение психологической проблемы онлайн.">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
         <meta name="yandex-verification" content="21a1bfa294ab0cbf" />
         <meta name="google-site-verification" content="VLGDZRZjNLGoZr7A2yC1QHGP42IBo-8CGMFYyIUpyeQ" />
         <link href="http://marina-chernousova.ru/" rel="canonical">
         <link rel="icon" href="{% static 'img/favicon.png' %}" type="image/x-icon">
-        <link href="https://fonts.googleapis.com/css?family=Marck+Script" rel="stylesheet"> 
-        <link href="https://fonts.googleapis.com/css?family=Montserrat:300,300i,400,500,700" rel="stylesheet"> 
-        <link rel="stylesheet" href="{% static 'css/reset.css' %}">
+        <link href="https://fonts.googleapis.com/css?family=Montserrat:300,300i,400,500,700" rel="stylesheet">
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
         <link rel="stylesheet/less" href="{% static 'less/main.less' %}">
         <script src="//cdnjs.cloudflare.com/ajax/libs/less.js/3.0.0/less.min.js" ></script>
+        <link rel="stylesheet" href="{% static 'css/set2.css' %}" type="text/css" media="all">
 
         <title>
             Психолог Онлайн
         </title>
     </head>
     <body>
-        <div class="wrapper {% if page == 'main' %} mainBg {% endif %}">
-            <header class="{% if page != 'main' %} pageBg {% endif %}">
-                <div id="topLine">
-                    <a href="/">
-                        <div class="brandName">Скорая Помощь Душе</div>
-                    </a>
+        <header>
+            <div class="logo-bar">
+                <div class="container">
+                    <div class="row display-flex">
+                        <div class="col-lg-4 d-none d-lg-block align-middle align-self-center">
+                            <a href="mailto:chernousova.m.a@yandex.ru">
+                                <i class="fa fa-envelope-o" aria-hidden="true"></i>
+                                chernousova.m.a@yandex.ru
+                            </a>
+                        </div>
+                        <div class="col-lg-4 text-center">
+                            <a href="/" class="logo">
+                                <img src="{% static 'img/logo.png' %}" alt="Лого">
+                            </a>
+                        </div>
+                        <div class="col-lg-4 d-none d-lg-block text-right align-self-center">
+                            <span>WhatsApp 8(953)693-37-40</span>
+                        </div>
+                    </div>
                 </div>
-                <nav id="menu">
-                    <ul id="menuLinks">
-                        <li>
-                            <a href="{% url 'main' %}" class="{% if page == 'main' %} active {% endif %}">Главная</a>
-                        </li>
-                        <li>
-                            <a href="{% url 'services' %}" class="{% if page == 'services' %} active {% endif %}">Услуги</a>
-                        </li>
-                        <li>
-                            <a href="{% url 'post_list' %}" class="{% if page == 'blog' %} active {% endif %}">Блог</a>
-                        </li>
-                        <li>
-                            <a href="{% url 'reviews' %}" class="{% if page == 'reviews' %} active {% endif %}">Отзывы</a>
-                        </li>
-                        <li>
-                            <a href="{% url 'contacts' %}" class="{% if page == 'contacts' %} active {% endif %}">Контакты</a>
-                        </li>
-                    </ul>
-                </nav>
-                <div id="mobile">
-                    <input type="checkbox" id="burger">
-                    <label for="burger" class="label"></label>
-                    <nav id="menuMobile">
-                        <li>
-                            <a href="{% url 'main' %}" class="{% if page == 'main' %} active {% endif %}">Главная</a>
-                        </li>
-                        <li>
-                            <a href="{% url 'services' %}" class="{% if page == 'services' %} active {% endif %}">Услуги</a>
-                        </li>
-                        <li>
-                            <a href="{% url 'post_list' %}" class="{% if page == 'blog' %} active {% endif %}">Блог</a>
-                        </li>
-                        <li>
-                            <a href="{% url 'reviews' %}" class="{% if page == 'reviews' %} active {% endif %}">Отзывы</a>
-                        </li>
-                        <li>
-                            <a href="{% url 'contacts' %}" class="{% if page == 'contacts' %} active {% endif %}">Контакты</a>
-                        </li>
-                    </nav>
+            </div>
+            <div class="navigation accent-bg">
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-sm-12 col-md-4 col-lg-3">
+                            <div class="row justify-content-end">
+                                <div class="col-sm-12 col-md-11">
+                                    <div class="name">Марина Черноусова</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="d-md-none col-sm-12 text-center">
+                             <a href="https://vk.com/transformazia9" target="_blank">
+                                 <i class="fa fa-vk" aria-hidden="true"></i>
+                             </a>
+                             <a href="https://www.instagram.com/chernousova.marina/" target="_blank">
+                                 <i class="fa fa-instagram" aria-hidden="true"></i>
+                             </a>
+                        </div>
+                        <div class="col-sm-12 col-md-4 col-lg-6">
+                            <ul class="text-center">
+                                <li class="d-inline-block">
+                                    <a href="{% url 'main' %}">главная</a>
+                                </li>
+                                <li class="d-inline-block">
+                                    <a href="{% url 'post_list' %}">мои статьи</a>
+                                </li>
+                                <li class="d-inline-block">
+                                    <a href="{% url 'reviews' %}">отзывы</a>
+                                </li>
+                                <li class="d-inline-block">
+                                    <a href="{% url 'contacts' %}">контакты</a>
+                                </li>
+                            </ul>
+                        </div>
+                         <div class="d-none d-md-block col-md-4 col-lg-3 icons">
+                            <div class="row justify-content-start">
+                                <div class="col-md-11 text-right">
+                                     <a href="https://vk.com/transformazia9" target="_blank">
+                                         <i class="fa fa-vk" aria-hidden="true"></i>
+                                     </a>
+                                     <a href="https://www.instagram.com/chernousova.marina/" target="_blank">
+                                         <i class="fa fa-instagram" aria-hidden="true"></i>
+                                     </a>
+                                </div>
+                            </div>
+                         </div>
+                    </div>
                 </div>
-            </header>
-            <main>
+            </div>
+        </header>
+        
                 {% block content %}
                 {% endblock %}
-            </main>
-            <footer>
-                <p>marina-chernousova.ru</p>
-                <a href=".confidentiality" class="popup">Политика конфиденциальности</a>
-            </footer>
-        </div>
+                
+        <footer>
+            <div class="social-block">
+                <div class="social">
+                    <a href="https://vk.com/transformazia9" target="_blank">
+                        <i class="fa fa-vk" aria-hidden="true"></i>
+                    </a>
+                </div>
+                <div class="social">
+                    <a href="https://www.instagram.com/chernousova.marina/" target="_blank">
+                        <i class="fa fa-instagram" aria-hidden="true"></i>
+                    </a>
+                </div>
+                <div class="social">
+                     <a href="mailto:chernousova.m.a@yandex.ru">
+                        <i class="fa fa-envelope-o" aria-hidden="true"></i>
+                    </a>
+                </div>
+            </div>
+            <div class="container contacts">
+                <div class="row justify-content-center">
+                    <div class="col-md-6 text-center">
+                        <a href="/" class="logo">
+                            <img src="{% static 'img/logo.png' %}" alt="Лого">
+                        </a>
+                        <p>
+                            WhatsApp - 8(953)693-37-40 <br>
+                            Skype - zabavushka999
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </footer>   
         
-        <div class="hidden">
+        <div class="d-none">
             <form id="modal" method="post" action="{% url 'send_form' %}">
                 {% csrf_token %}
-                <p class="modalTitle">Запись на консультацию</p>
+                <p class="modalTitle">Запись на бесплатную <br> экспресс-консультацию</p>
                 <input type="text" name="name" placeholder="Ваше имя" required>
-                <input type="text" name="email" placeholder="Ваш email">
-                <p class="center">или</p>
-                <input type="text" name="skype" placeholder="Ваш skype">
+                <input type="text" name="contact" placeholder="Контактные данные">
+                <p class="text-center modalSubtitle">Ваш e-mail, skype, whatsApp или ссылка на страницу ВКонтакте</p>
                 <textarea name="text" cols="30" rows="5" 
                           placeholder="Кратко опишите Вашу проблему"
-                          maxlength="1000"
-                          ></textarea>
-                <div class="btnBlock">
+                          maxlength="1000"></textarea>
+                <div class="text-center btnBlock">
                     <input type="submit" class="btn" value="Отправить">
                 </div>
             </form>
         </div>
         
-        <div class="hidden">
-            <form id="modalQuestion" method="post" action="{% url 'send_form' %}">
-                {% csrf_token %}
-                <p class="modalTitle">Задать вопрос</p>
-                <input type="text" name="name" placeholder="Ваше имя" required>
-                <input type="text" name="email" placeholder="Ваш email">
-                <p class="center">или</p>
-                <input type="text" name="skype" placeholder="Ваш skype">
-                <textarea name="text" cols="30" rows="5" 
-                          placeholder="Ваш вопрос"
-                          maxlength="1000"
-                          ></textarea>
-                <div class="btnBlock">
-                    <input type="submit" class="btn" value="Отправить">
-                </div>
-            </form>
+        <div class="d-none">
+            <div class="hidden">
+                <form id="modalQuestion" method="post" action="/send_form/">
+                    {% csrf_token %}
+                    <p class="modalTitle">Задать вопрос</p>
+                    <input type="text" name="name" placeholder="Ваше имя" required>
+                    <input type="text" name="contact" placeholder="Контактные данные">
+                    <p class="text-center modalSubtitle">Ваш e-mail, skype, whatsApp или ссылка на страницу ВКонтакте</p>
+                    <textarea name="text" cols="30" rows="5" 
+                              placeholder="Кратко опишите Вашу проблему"
+                              maxlength="1000"></textarea>
+                    <div class="text-center btnBlock">
+                        <input type="submit" class="btn" value="Отправить">
+                    </div>
+                </form>
+            </div>
         </div>
         
-        <div class="hidden">
+        <div class="d-none">
             <div class="confidentiality">
                 <span class="confidentiality__title">ПОЛИТИКА КОНФИДЕНЦИАЛЬНОСТИ</span><br>
                 <span class="confidentiality__text">
@@ -139,6 +188,12 @@
 			  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
 			  crossorigin="anonymous">
         </script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" 
+                integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" 
+                crossorigin="anonymous"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" 
+                integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" 
+                crossorigin="anonymous"></script>
         <script src="{% static 'js/jquery.magnific-popup.min.js' %}"></script>
         <script src="{% static 'js/main.js' %}"></script>
 

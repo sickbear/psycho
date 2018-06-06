@@ -10,6 +10,7 @@ class Post(models.Model):
         ordering = ['create']
 
     title = models.CharField('Заголовок', max_length=550)
+    subtitle = models.CharField('Подзаголовок', max_length=1000, null=True)
     text = RichTextUploadingField(blank=True, null=True)
     image = models.ImageField('Изображение', upload_to='post/')
     create = models.DateTimeField('Создано', auto_now=True)

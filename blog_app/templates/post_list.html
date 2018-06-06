@@ -2,14 +2,27 @@
 {% load staticfiles %}
 
 {% block content %}
-    <div id="blog">
-    {% for post in posts %}
-        <div class="post">
-            <a href="{% url 'post_single' pk=post.id %}">
-                <img src="{{ MEDIA_URL }}{{ post.image.url }}" alt="{{ post.title }}" class="post__img">
-                <p class="post__title">{{ post.title }}</p>
-            </a>
+
+    <section id="blog">
+        <div class="container">
+            <div class="row no-gutters justify-content-center">
+                {% for post in posts %}
+                <div class="grid col-md-12 col-lg-6 col-xl-4">
+                    <figure class="effect-ming">
+                        <img src="{{ MEDIA_URL }}{{ post.image.url }}" alt="{{ post.title }}"/>
+                        <figcaption>
+                            <h2><span>{{ post.title }}</span></h2>
+                            {% if post.subtitle %}
+                                <p>{{ post.subtitle }}</p>
+                            {% endif %}
+                            <a href="{% url 'post_single' pk=post.id %}">Читить...</a>
+                        </figcaption>			
+                    </figure>
+                </div>
+                {% endfor %}
+
+            </div>
         </div>
-    {% endfor %}
-    </div>
+    </section>
+    
 {% endblock %}

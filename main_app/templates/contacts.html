@@ -3,32 +3,35 @@
 
 {% block content %}
 
-                        <div id="contacts">
-                            <p class="list">
-                                <img src="{% static 'img/rec_logo.jpg' %}" alt="">
-                                <a href="#modalQuestion" class="bold popup">Задать вопрос</a>
-                            </p>
-                            <p class="list">
-                                <img src="{% static 'img/mail_logo.jpg' %}" alt="">
-                                <a href="mailto:chernousova.m.a@yandex.ru" class="bold">Написать письмо</a>
-                            </p>
-                            <p class="list">
-                                <img src="{% static 'img/skype_logo.jpg' %}" alt="">
-                                <span class="bold">zabavushka999</span>
-                            </p>
-                             <p class="list">
-                                <img src="{% static 'img/vk_logo.jpg' %}" alt="">
-                                <a href="https://vk.com/transformazia9" target="_blank" class="bold">vk.com/transformazia9</a>
-                            </p>
-                            <p class="list">
-                                <img src="{% static 'img/instagram_logo.jpg' %}" alt="">
-                                <a href="https://www.instagram.com/chernousova.marina/" target="_blank" class="bold">chernousova.marina</a>
-                            </p>
+                        <section id="contacts">
+                            <div class="container">
+                                <div class="row justify-content-center">
+                                    <i class="fa fa-question-circle" aria-hidden="true"></i>
+                                    <a href="#modalQuestion" class="bold popup">Задать вопрос</a>
+                                </div>
+                                <div class="row justify-content-center">
+                                    <i class="fa fa-envelope" aria-hidden="true"></i>
+                                    <a href="mailto:chernousova.m.a@yandex.ru" class="bold">Написать письмо</a>
+                                </div>
+                                <div class="row justify-content-center">
+                                     <i class="fa fa-skype" aria-hidden="true"></i>
+                                     <span>zabavushka999</span>
+                                </div>
+                                <div class="row justify-content-center">
+                                    <i class="fa fa-vk" aria-hidden="true"></i>
+                                    <a href="https://vk.com/transformazia9" target="_blank" class="bold">vk.com/transformazia9</a>
+                                </div>
+                                <div class="row justify-content-center">
+                                    <i class="fa fa-instagram" aria-hidden="true"></i>
+                                    <a href="https://www.instagram.com/chernousova.marina/" target="_blank" class="bold">chernousova.marina</a>
+                                </div>
 <!--
-                            <p class="list">
-                                <a href="" class="bold">Мой канал на YouTube</a>
-                            </p>
+                                <div class="row justify-content-center">
+                                    <i class="fa fa-youtube-square" aria-hidden="true"></i>
+                                    <a href="">Мой канал на YouTube</a>
+                                </div>
 -->
-                        </div>
+                            </div>
+                        </section>
                         
 {% endblock %}
