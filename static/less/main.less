@@ -175,6 +175,9 @@ textarea {
         padding: 20px;
         display: block;
         width: 280px;
+        &:hover {
+            background: darken(@footer-color, 2%);
+        }
     }
 }
 
@@ -358,6 +361,7 @@ footer {
             width: 100%;
             height: 100%;
             min-width: 275px;
+            min-height: 300px;
             border: 1px solid #fff;
             & img {
                 opacity: 0.7;
@@ -379,6 +383,8 @@ footer {
 /* post */
 #post {
     padding: 80px 0;
+    font-family: @title-font;
+    color: @text-color;
     & strong {
         font-weight: bold;
     }
@@ -394,6 +400,9 @@ footer {
         font-family: 'Montserrat', sans-serif;
         text-transform: uppercase;
         padding: 20px 50px;
+        &:hover {
+            background: darken(@footer-color, 2%);
+        }
     }
     & p {
         padding: 0 15px;
@@ -452,12 +461,15 @@ footer {
     & .modalTitle {
         text-align: center;
         padding: 15px;
+        line-height: 24px!important;
+        font-weight: bold;
     }
     & .modalSubtitle {
         font-size: 13px;
         padding: 0 30px;
         line-height: 15px!important;
         font-family: sans-serif;
+        opacity: 0.5;
     }
     & .btnBlock {
         & .btn {
@@ -472,7 +484,14 @@ footer {
             font-family: 'Montserrat', sans-serif;
             text-transform: uppercase;
             padding: 20px 50px;
+            &:hover {
+                background: darken(@footer-color, 2%);
+            }
         }
+    }
+    & textarea {
+        white-space: pre-line;
+        line-height: 24px!important;
     }
 }
 
