@@ -12,6 +12,10 @@ def services(request):
     page = 'services'
     return render(request, 'services.html', {'page': page})
 
+def prices(request):
+    page = 'services'
+    return render(request, 'prices.html', {'page': page})
+
 def reviews(request):
     page = 'reviews'
     return render(request, 'reviews.html', {'page': page})

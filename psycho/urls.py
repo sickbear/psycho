@@ -4,12 +4,13 @@ from django.conf.urls import url, include
 from django.conf import settings
 from django.conf.urls.static import static
 from blog_app.views import post_list, post_single
-from main_app.views import (main, services, reviews, contacts, send_form, sent)
+from main_app.views import (main, services, prices, reviews, contacts, send_form, sent)
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     url(r'^$', main, name='main'),
     url(r'^services/$', services, name='services'),
+    url(r'^prices/$', prices, name='prices'),
     url(r'^blog/$', post_list, name='post_list'),
     url(r'^reviews/$', reviews, name='reviews'),
     url(r'^contacts/$', contacts, name='contacts'),

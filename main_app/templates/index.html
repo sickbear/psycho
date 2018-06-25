@@ -6,8 +6,30 @@
             <div class="container-fluid">
                 <div class="row">
                     <div class="col-12 col-md-6 col-sm-8 col-xs-12">
-                        <h1>Помогу выйти из замкнутого круга и изменить вашу жизнь навсегда</h1>
-                        <a href="#modal" class="btn popup">Запись на бесплатную <br>экспресс-консультацию</a>
+                        <h1>Профессиональная психологическая помощь</h1>
+                        <div class="text-center btnBlock d-block d-sm-none">
+                            <a href="#modal" class="btn popup">Запись на бесплатную <br>экспресс-консультацию</a>
+                        </div>
+                        <form method="post" action="{% url 'send_form' %}">
+                            <h2>Запись на бесплатную экспресс-консультацию</h2>
+                            {% csrf_token %}
+                            <input type="text" name="name" placeholder="Ваше имя" required>
+                            <input type="text" name="contact" placeholder="Контактные данные">
+                            <div class="tip">
+                                <ul>
+                                    <li>e-mail</li>
+                                    <li>skype</li>
+                                    <li>whatsApp</li>
+                                    <li>VK</li>
+                                </ul>
+                            </div>
+                            <textarea name="text" cols="30" rows="5" 
+                                      placeholder="Краткое описание проблемы"
+                                      maxlength="1000"></textarea>
+                            <div class="text-center btnBlock">
+                                <input type="submit" class="btn" value="Отправить">
+                            </div>
+                        </form>
                     </div>
                 </div>
             </div>
@@ -22,33 +44,16 @@
                             <meta itemprop="image" content="{% static 'img/marina-chernousova.jpg' %}">
                             <meta itemprop="email" content="chernousova.m.a@yandex.ru">
                             <p class="text-justify">
-                                Здравствуйте, меня зовут <span itemprop="name">Черноусова Марина Александровна</span>. Я психолог-тренер. В своей работе использую уникальную авторскую методику, в которой объединила метод индивидуальной системной расстановки и регрессивный гипноз. <span itemprop="makesOffer">Я оказываю помощь в решении психологических проблем очно и по скайпу. Вы можете ко мне обратиться, если в вашей жизни есть повторяющаяся ситуация, из которой вы не можете найти выход.</span>
+                                Здравствуйте, меня зовут <span itemprop="name">Черноусова Марина Александровна</span>. Я эксперт в области перепрограммирования человека. Часто причиной многих жизненных проблем являются блокирующие программы, которые определяют, какое у человека будет здоровье, отношение к себе, к противоположному полу, к деньгам и многое другое... Реальность заключается в том, что программы вытеснены в бессознательное. И пока человек их не видит, он не может изменить ситуацию. <span itemprop="makesOffer">Я помогу вам обнаружить и "переписать" любую блокирующую программу НА ПУТИ К УСПЕХУ.</span>
                             </p>
+                            <p class="text-left">Темы, с которыми я работаю:</p>
+                            <ul class="text-left">
+                                <li>здоровье;</li>
+                                <li>отношения;</li>
+                                <li>финансы;</li>
+                                <li>предназначение.</li>
+                            </ul>
                         </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-        
-        <section id="problems">
-            <div class="container">
-                <div class="row display-flex">
-                    <div class="col-lg-6">
-                        <h2>Проблемы</h2>
-                        <h3>С моей помощью Вы можете решить такие проблемы, как:</h3>
-                        <ul>
-                            <li>страхи и фобии</li>
-                            <li>проблемы во взаимоотношениях</li>
-                            <li>поиск себя и предназначения</li>
-                            <li>повысить свою самооценку</li>
-                            <li>решить денежные проблемы</li>
-                            <li>понять и сделать достижимыми свои цели</li>
-                            <li>раскрыть свои способности</li>
-                            <li>и решить свои психосоматические проблемы</li>
-                        </ul>
-                    </div>
-                    <div class="col-lg-6">
-                        <img src="{% static 'img/key.jpg' %}" alt="">
                     </div>
                 </div>
             </div>
@@ -56,29 +61,30 @@
         
         <section id="advantages">
             <div class="container">
-                <h2>Почему мне можно доверять</h2>
+                <h2>Преимущества моих консультаций</h2>
                 <div class="row justify-content-center">
-                    <div class="col-md-6 advantage text-center">
+                    <div class="col-md-6 advantage text-justify">
                         <img src="{% static 'img/advantage_1.png' %}" alt="">
                         <h3>Конкретный результат за короткий срок в достижении желаемого</h3>
-                        <p>Авторская методика, которую я использую, помогает моим клиентам кардинально изменить свою жизнь в короткие сроки. После такой работы ситуации, которые причиняли боль, перестают беспокоить и случаться. Проблема уходит раз и навсегда в течение 1-4 консультаций, в зависимости от глубины травмы.</p>
+                        <p>Авторская методика, которую я разработала и применяю, помогает людям изменить жизнь в короткие сроки. После такой работы ситуации, которые причиняли боль, перестают беспокоить и случаться. Проблема уходит раз и навсегда в течение 1-4 консультаций, в зависимости от глубины травмы.</p>
                     </div>
-                    <div class="col-md-6 advantage text-center">
-                        <img src="{% static 'img/advantage_2.png' %}" alt="">
-                        <h3>Индивидуальный подход</h3>
-                        <p>К каждому клиенту подбираются нужные методики, кол-во сеансов. Если ситуация не стандартная, значит мы совместно найдем ее решение</p>
+                    <div class="col-md-6 advantage text-justify">
+                       <img src="{% static 'img/advantage_2.png' %}" alt="">
+                        <h3>Оплата после решения проблемы</h3>
+                        <p>Вы ничем не рискуете, потому что расплачиваетесь со мной после проведения консультации при условии получения необходимого результата.</p>
+                        
                     </div>
-                    <div class="col-md-6 advantage text-center">
+                    <div class="col-md-6 advantage text-justify">
                         <img src="{% static 'img/advantage_3.png' %}" alt="">
-                        <h3>Hangouts и Skype</h3>
-                        <p>На сегодняшний день, интернет – это решение многих проблем, в том числе и для консультаций. Вы можете находиться у себя дома, в комфортной и безопасной обстановке, и решать свои проблемы с психологом.</p>
+                        <h3>Работа через интернет</h3>
+                        <p>Интернет – это удобная площадка для проведения психологических консультаций. Вы можете решать свои проблемы с психологом, находясь у себя дома в комфортной и безопасной обстановке.</p>
                     </div>
-                    <div class="col-md-6 advantage text-center">
+                    <div class="col-md-6 advantage text-justify">
                         <img src="{% static 'img/advantage_4.png' %}" alt="">
                         <h3>Профильное образование</h3>
                         <p>Дипломированный психолог, гипнолог.
                         Мое образование: педагогическое, психологическое, ВятГГУ, ВСЭИ.
-                        Мои техники: индивидуальная системная расстановка, гипноз (эриксоновский, регрессивный), арт-терапия, Дизайн Человека
+                        Мои техники: индивидуальная системная расстановка, гипноз (эриксоновский, регрессивный), сценарный анализ, арт-терапия, Дизайн Человека
                         </p>
                     </div>
                     <a href="{% url 'reviews' %}">Отзывы о моей работе >>></a>
@@ -88,33 +94,37 @@
         
         <section id="steps">
             <div class="container">
-                <h2>Два шага к результату</h2>
+                <h2>Три шага к результату</h2>
                 <div class="row justify-content-around">
-                    <div class="col-lg-5 step text-center">
-                        <img src="{% static 'img/step_11.png' %}" alt="">
+                    <div class="col-lg-4 step text-center">
+                        <img src="{% static 'img/step_1.jpg' %}" alt="">
                         <h3>
-                            Связаться со мной, любым из 
-                            <a href="{% url 'contacts' %}">указанных способов >>></a>
+                            1) ЭКСПРЕСС-КОНСУЛЬТАЦИЯ
                         </h3>
-                        <p>В ходе нашего общения, которое, по сути, является небольшой консультацией, я проясняю для себя возможность оказания помощи и помогаю сориентироваться позвонившему мне человеку в том, чем я могу быть для него полезна и решаю, готова ли я начать с вами работу.</p>
-                        <p class="font-weight-bold">Продолжительность: 10-15 минут</p>
-                        <p class="font-weight-bold">Стоимость: <span class="green-text">бесплатно</span></p>
+                        <p class="text-justify">на которой рассмотрим варианты решения проблемы и скидки.</p>
+                        <p class="font-weight-bold">Продолжительность: 10-15&nbsp;минут</p>
+                        <p class="font-weight-bold">Стоимость: <span class="red-text">0 рублей</span></p>
                     </div>
-                    <div class="col-lg-5 step text-center">
-                        <img src="{% static 'img/step_22.png' %}" alt="">
-                        <h3>Рабочий сеанс</h3>
-                        <p>На котором происходит глубинная работа с бессознательным. Состоит из:</p>
-                        <ul>
-                            <li>1) диагностики  (выявляется истинный запрос и глубинные причины проблемы);</li>
-                            <li>2) коррекции (выход в желаемое состояние, формирование нового способа поведения и закрепления в нем).</li>
-                        </ul>
-                        <p class="font-weight-bold">Продолжительность: 90-120 минут</p>
-                        <p class="font-weight-bold">Стоимость: 3 000 рублей</p>
+                    <div class="col-lg-4 step text-center">
+                        <img src="{% static 'img/step_2.jpg' %}" alt="">
+                        <h3>2) ПОЛНОЦЕННАЯ КОНСУЛЬТАЦИЯ</h3>
+                        <p class="text-justify">на которой происходит глубинная работа по выявлению и изменению блокирующих программ в рамках заявленной темы.</p>
+                        <p class="font-weight-bold">Продолжительность: 90-120&nbsp;минут</p>
+                        <p class="font-weight-bold">Стоимость: 5 000 рублей</p>
+                        <a href="{% url 'prices' %}">Узнать об условиях 50% скидки</a>
+                    </div>
+                    <div class="col-lg-4 step text-center">
+                        <img src="{% static 'img/step_3.jpg' %}" alt="">
+                        <h3>3) СОПРОВОЖДЕНИЕ</h3>
+                        <p class="text-justify">После проведения работы я сопровождаю клиента в письменной форме для закрепления результата.</p>
+                        <p class="font-weight-bold">Продолжительность: 30&nbsp;дней</p>
+                        <p class="font-weight-bold price">Стоимость: <span class="line-through">3 900</span> рублей <span class="red-text">БЕСПЛАТНО</span></p>
                     </div>
                 </div>
                 <div class="row">
-                    <p class="desc text-center">
-                        Заказывая консультацию,  вы покупаете <span class="font-weight-bold">программу благополучия</span> в рамках заявленной темы <span class="font-weight-bold">на всю оставшуюся жизнь</span>. Консультация – это маленькая операция Души по выявлению глубинной причины боли (психотравмы) и ее полному устранению. 
+                    <p class="desc text-justify">
+                        Консультация – это маленькая операция Души по выявлению глубинной причины боли (психотравмы) и ее полному устранению.
+                        Заказывая консультацию,  вы покупаете <span class="font-weight-bold">программу благополучия</span> в рамках заявленной темы <span class="font-weight-bold">на всю оставшуюся жизнь</span>. 
                     </p>
                 </div>
             </div>
@@ -123,11 +133,13 @@
         <section id="order-now">
             <div class="container">
                 <div class="row">
-                    <div class="col-md-12 col-lg-8">
-                        <h2>Запишитесь на бесплатную экспресс-консультацию</h2>
+                    <div class="col-md-12 col-lg-10">
+                        <blockquote>
+                            "Никто не может вернуться назад и совершить другой старт. Но каждый может начать сегодня и прийти к другому финишу." Карл Бард
+                        </blockquote>
                     </div>
-                    <div class="col-md-12 col-lg-4 btn-container">
-                        <a href="#modal" class="btn-primary popup">Запись</a>
+                    <div class="col-md-12 col-lg-2 btn-container">
+                        <a href="#modal" class="btn-primary popup">СТАРТ</a>
                     </div>
                 </div>
             </div>
@@ -143,27 +155,55 @@
                             <div class="card-header" id="headingOne">
                                 <h5 class="mb-0">
                                     <button class="btn btn-link" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                                        Сколько консультаций нужно?
+                                        Почему это столько стоит?
                                     </button>
                                 </h5>
                             </div>
                             <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion">
                                 <div class="card-body">
-                                    1-4, в зависимости от глубины проблемы.
+                                    Используемые на консультации методики решают проблему клиента за одну консультацию.
                                 </div>
                             </div>
                         </div>
                         <div class="card">
                             <div class="card-header" id="headingTwo">
                                 <h5 class="mb-0">
-                                    <button class="btn btn-link collapsed text-wrap" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                    <button class="btn btn-link" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
+                                        Сколько консультаций нужно?
+                                    </button>
+                                </h5>
+                            </div>
+                            <div id="collapseTwo" class="collapse show" aria-labelledby="headingTwo" data-parent="#accordion">
+                                <div class="card-body">
+                                    1-4, в зависимости от глубины проблемы.
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div class="card-header" id="headingThree">
+                                <h5 class="mb-0">
+                                    <button class="btn btn-link collapsed text-wrap" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
                                         На сколько эффективна консультация через интернет?
                                     </button>
                                 </h5>
                             </div>
-                            <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion">
+                            <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordion">
                                 <div class="card-body">
-                                    Эффективность онлайн-сеанса такая же, как при очной встрече. В процессе работы нужен не физический, а эмоционально-образный контакт, который легко устанавливается через видео звонок. При обрыве связи, мы снова созвонимся и продолжим работу. 
+                                    Эффективность онлайн-сеанса такая же, как при очной встрече, потому что процессе работы нужен не физический, а эмоционально-образный контакт, который легко устанавливается через видео звонок. 
+                                </div>
+                            </div>
+                        </div>
+                         <div class="card">
+                            <div class="card-header" id="headingFour">
+                                <h5 class="mb-0">
+                                    <button class="btn btn-link" data-toggle="collapse" data-target="#collapseFour" aria-expanded="true" aria-controls="collapseFour">
+                                        Какие вы можете дать гарантии, обеспечивающие полное решение моей проблемы?
+                                    </button>
+                                </h5>
+                            </div>
+                            <div id="collapseFour" class="collapse show" aria-labelledby="headingFour" data-parent="#accordion">
+                                <div class="card-body">
+                                    Онлайн-сеанс так же эффективен, как и очная встреча, потому что процессе работы нужен не физический, а эмоционально-образный контакт, который легко устанавливается через видео звонок.
                                 </div>
                             </div>
                         </div>

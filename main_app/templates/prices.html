@@ -1,0 +1,49 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+
+{% block content %}
+                    <section id="prices">
+                        <div class="container">
+                            <h3>Вы ничем не рискуете, потому что расчитываетесь со мной после проведения консультации при условии получения необходимого результата.</h3>
+                            <table class="table">
+                                <thead>
+                                    <tr>
+                                        <th scope="col" class="text-center">Услуги</th>
+                                        <th scope="col" class="text-center d-none d-sm-table-cell">Продолжительность</th>
+                                        <th scope="col" class="text-center">Цены</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>Экспресс-консультация</td>
+                                        <td class="d-none d-sm-table-cell">15 мин</td>
+                                        <td>
+                                            <span class="red-text">0 руб</span>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>Полноценная консультация</td>
+                                        <td class="d-none d-sm-table-cell">90-120 мин</td>
+                                        <td>5000 руб</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Полноценная консультация + ваш видео отзыв о проделанной работе и полученных результатах</td>
+                                        <td class="d-none d-sm-table-cell">90-120 мин</td>
+                                        <td><span class="line-through">5000</span> руб<br> 2500 руб</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Сопровождение после консультации в письменной форме</td>
+                                        <td class="d-none d-sm-table-cell">30 дней</td>
+                                        <td>
+                                            <span class="line-through">3900</span> руб 
+                                            <span class="red-text">бесплатно</span>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            <div class="text-center btnBlock">
+                                <a href="#modal" class="btn popup">Записаться на консультацию</a>
+                            </div>
+                        </div>
+                    </section>
+{% endblock %}
