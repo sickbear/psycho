@@ -5,12 +5,17 @@
 		<priority>1</priority>
 	</url>
 	<url>
-		<loc>http://marina-chernousova.ru/blog/</loc>
+		<loc>http://marina-chernousova.ru/prices/</loc>
 		<changefreq>daily</changefreq>
 		<priority>1</priority>
 	</url>
 	<url>
 		<loc>http://marina-chernousova.ru/reviews/</loc>
+		<changefreq>daily</changefreq>
+		<priority>1</priority>
+	</url>
+	<url>
+		<loc>http://marina-chernousova.ru/blog/</loc>
 		<changefreq>daily</changefreq>
 		<priority>1</priority>
 	</url>
