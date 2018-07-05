@@ -25,13 +25,18 @@ $(document).ready(function() {
     })
     
     // Подсказка в форме
-    $('#offer input[name="contact"]').on({
+    $('#offer input[name="phone"]').on({
         focusin: function() {
             $('#offer .tip').show(200);
         },
         focusout: function() {
             $('#offer .tip').hide(400);
         }
+    });
+    
+    // Маска телефона
+    $(function($) {
+       $('input[name=phone]').mask('+7 (999) 999-9999');
     });
     
     // Плагины

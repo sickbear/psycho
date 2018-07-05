@@ -167,33 +167,15 @@
                 {% csrf_token %}
                 <p class="modalTitle">Запись на бесплатную <br> экспресс-консультацию</p>
                 <input type="text" name="name" placeholder="Ваше имя" required>
-                <input type="text" name="contact" placeholder="Контактные данные">
-                <p class="text-center modalSubtitle">Ваш e-mail, skype, whatsApp или ссылка на страницу ВКонтакте</p>
+                <input type="text" name="phone" placeholder="Контактные данные">
+                <p class="text-center modalSubtitle">Ваш WhatsApp или Viber</p>
                 <textarea name="text" cols="30" rows="5" 
-                          placeholder="Краткое описание Вашей проблемы"
+                          placeholder="Краткое описание проблемы"
                           maxlength="1000"></textarea>
                 <div class="text-center btnBlock">
                     <input type="submit" class="btn" value="Отправить">
                 </div>
             </form>
-        </div>
-        
-        <div class="d-none">
-            <div class="hidden">
-                <form id="modalQuestion" method="post" action="/send_form/">
-                    {% csrf_token %}
-                    <p class="modalTitle">Задать вопрос</p>
-                    <input type="text" name="name" placeholder="Ваше имя" required>
-                    <input type="text" name="contact" placeholder="Контактные данные">
-                    <p class="text-center modalSubtitle">Ваш e-mail, skype, whatsApp или ссылка на страницу ВКонтакте</p>
-                    <textarea name="text" cols="30" rows="5" 
-                              placeholder="Кратко опишите Вашу проблему"
-                              maxlength="1000"></textarea>
-                    <div class="text-center btnBlock">
-                        <input type="submit" class="btn" value="Отправить">
-                    </div>
-                </form>
-            </div>
         </div>
         
         <div class="d-none">
@@ -227,6 +209,7 @@
                 crossorigin="anonymous"></script>
         <script src="{% static 'js/jquery.magnific-popup.min.js' %}"></script>
         <script src="{% static 'js/main.js' %}"></script>
+        <script src="{% static 'js/jquery.maskedinput.min.js' %}"></script>
 
         <!-- Yandex.Metrika counter -->
         <script type="text/javascript" >
