@@ -27,7 +27,7 @@ def contacts(request):
 def send_form(request):
     if request.method == 'POST':
         name = request.POST.get('name')
-        contact = request.POST.get('contact')
+        contact = request.POST.get('phone')
         text = request.POST.get('text')
 
         subject = 'Вопрос с сайта marina-chernousova.ru'
